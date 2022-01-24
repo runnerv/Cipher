@@ -25,10 +25,7 @@ public class Cezar {
 
                 int charIndex = alphabet.indexOf(string.charAt(i));            // Шифруем
                 int newCharIndex = (charIndex + key) % alphabet.length();
-               if (i==string.length()){
-                   sb.append(System.lineSeparator());
-               }sb.append(alphabet.charAt(newCharIndex));
-
+                sb.append(alphabet.charAt(newCharIndex));
             }
         }
         return sb.toString();
