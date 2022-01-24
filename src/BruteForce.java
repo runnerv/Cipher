@@ -24,7 +24,7 @@ public class BruteForce {
                 sb.append(result);
                 System.out.printf("Вам повезло, шифр взломан c %d попытки и успешно сохранен.\n\n", keyDecryptIs);
                 break;
-            }
+            }else System.out.println("Что-то пошло не так...");
         }
         return sb.toString();
 
