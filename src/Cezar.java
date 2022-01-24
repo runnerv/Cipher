@@ -23,7 +23,7 @@ public class Cezar {
 
             for (int i = 0; i < string.length(); i++) {
 
-                int charIndex = alphabet.indexOf(string.charAt(i));
+                int charIndex = alphabet.indexOf(string.charAt(i));            // Шифруем
                 int newCharIndex = (charIndex + key) % alphabet.length();
                if (i==string.length()){
                    sb.append(System.lineSeparator());
@@ -36,7 +36,7 @@ public class Cezar {
 
     public String deCrypt(File file, int key) throws IOException {
 
-        Cezar cezar = new Cezar();
+        Cezar cezar = new Cezar();         // Дешифруем
         return cezar.enCrypt(file, (alphabet.length()) - (key % alphabet.length()));
     }
 }

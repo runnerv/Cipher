@@ -50,7 +50,7 @@ public class CryptaAnalysis {
 
         for (String s : stringsCrypto) {
             for (int i = 0; i < s.length(); i++) {
-                for (int k = 0; k < listOfCharsCrypto.size(); k++) {
+                for (int k = 0; k < listOfCharsCrypto.size(); k++) {      // Меняем символы из одной на символы другой
                     if (s.charAt(i) == listOfCharsCrypto.get(k)) {
                         result.append(listOfCharsStat.get(k));
                     }
@@ -64,7 +64,7 @@ public class CryptaAnalysis {
     private static void fillStatChars(List<String> strings, HashMap<Character, Integer> map) {
         for (String string : strings) {
             for (int i = 0; i < string.length(); i++) {
-                for (Map.Entry<Character, Integer> entry : map.entrySet())
+                for (Map.Entry<Character, Integer> entry : map.entrySet())      // Собираем статистику
                     if (entry.getKey() == string.charAt(i)) {
                         int countChars = entry.getValue();
                         map.put(string.charAt(i), (countChars + 1));
@@ -77,7 +77,7 @@ public class CryptaAnalysis {
     private static Map sortedMapOfChars(HashMap<Character, Integer> map) {
         Map<Character, Integer> sortedMap = map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue((a, b) -> b - a))
-                .collect(LinkedHashMap::new,
+                .collect(LinkedHashMap::new,                                  // Сортируем MAP
                         (m, c) -> m.put(c.getKey(), c.getValue()),
                         LinkedHashMap::putAll);
         return sortedMap;

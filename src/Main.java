@@ -3,7 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class CezarCodding {
+public class Main {
 
     static String startMenu = "Криптопрограмма pre-alpha build 0.1\n\n" +
             "Выберите действие:\n\n" +
