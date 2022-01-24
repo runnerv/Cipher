@@ -41,10 +41,10 @@ public class CryptaAnalysis {
             mapStat.put(aChar, 0);
         }
 
-        fillStatChars(stringsCrypto, mapCrypto);
+        fillStatChars(stringsCrypto, mapCrypto);                      // Заполняем
         fillStatChars(stringsStat, mapStat);
 
-        listOfCharsCrypto = new ArrayList<>(sortedMapOfChars(mapCrypto).keySet());
+        listOfCharsCrypto = new ArrayList<>(sortedMapOfChars(mapCrypto).keySet());      // Сортируем
         listOfCharsStat = new ArrayList<>(sortedMapOfChars(mapStat).keySet());
 
 
@@ -64,7 +64,8 @@ public class CryptaAnalysis {
     private static void fillStatChars(List<String> strings, HashMap<Character, Integer> map) {
         for (String string : strings) {
             for (int i = 0; i < string.length(); i++) {
-                for (Map.Entry<Character, Integer> entry : map.entrySet())      // Собираем статистику
+                for (Map.Entry<Character, Integer> entry : map.entrySet())      // Метод сбора статистики на основе
+                                                                                // нашего аллфавита
                     if (entry.getKey() == string.charAt(i)) {
                         int countChars = entry.getValue();
                         map.put(string.charAt(i), (countChars + 1));
@@ -77,7 +78,7 @@ public class CryptaAnalysis {
     private static Map sortedMapOfChars(HashMap<Character, Integer> map) {
         Map<Character, Integer> sortedMap = map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue((a, b) -> b - a))
-                .collect(LinkedHashMap::new,                                  // Сортируем MAP
+                .collect(LinkedHashMap::new,                                  // Метод Сортирвки HashMap
                         (m, c) -> m.put(c.getKey(), c.getValue()),
                         LinkedHashMap::putAll);
         return sortedMap;

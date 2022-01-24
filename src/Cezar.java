@@ -36,7 +36,7 @@ public class Cezar {
 
     public String deCrypt(File file, int key) throws IOException {
 
-        Cezar cezar = new Cezar();         // Дешифруем
-        return cezar.enCrypt(file, (alphabet.length()) - (key % alphabet.length()));
+        Cezar cezar = new Cezar();
+        return cezar.enCrypt(file, (alphabet.length()) - (key % alphabet.length()));  // Дешифруем
     }
 }
