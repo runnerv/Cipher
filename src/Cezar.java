@@ -19,22 +19,22 @@ public class Cezar {
         List<String> strings = linesCrypto.toList();
         StringBuilder sb = new StringBuilder();
 
-        for (String string : strings) {                                                 // Шифруем
-            if (string.length() == 0) {
-                sb.append("\r\n");
+        for (String string : strings) {
+            if (string.length() == 0) {                 // Проверяем не пустая ли строка в оригинале
+                sb.append("\r\n");                      // ... и делаем как было
             }
-            for (int i = 0; i < string.length(); i++) {
+            for (int i = 0; i < string.length(); i++) {                                    // Шифруем
 
-                int charIndex = alphabet.indexOf(string.charAt(i));
+                int charIndex = alphabet.indexOf(string.charAt(i));       // Получаем индекс символа из нашего алфавита
 
-                int newCharIndex = (charIndex + key) % alphabet.length();
+                int newCharIndex = (charIndex + key) % alphabet.length(); //  Меняем в зависимости от ключа символ
                 sb.append(alphabet.charAt(newCharIndex));
-                if (i == string.length() - 1) {
+                if (i == string.length() - 1) {                    // Если строка закончилась, переходим на новую
                     sb.append("\n");
                 }
             }
         }
-        return sb.toString();
+        return sb.toString();                         // Результат
     }
 
     public String deCrypt(File file, int key) throws IOException {

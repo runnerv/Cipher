@@ -12,11 +12,11 @@ public class BruteForce {
             int keyDecryptIs = 0;
             int countValidity = 0;
             sb = new StringBuilder(cezar.deCrypt(file, i));
-            char[] chars = sb.toString().toCharArray();                        // Перебираем варианты
-            for (int k = 0; k < chars.length-1; k++) {
+            char[] chars = sb.toString().toCharArray();
+            for (int k = 0; k < chars.length-1; k++) {             // Перебираем варианты
                 if (Character.isWhitespace(chars[k]) ||
                         String.valueOf(chars[k]).equals(".") && String.valueOf(chars[k+1]).equals(" "))
-                    countValidity++;
+                    countValidity++;                      // Копим валидность
                 keyDecryptIs = i;
             }
 
