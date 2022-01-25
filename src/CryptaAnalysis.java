@@ -41,10 +41,10 @@ public class CryptaAnalysis {
             mapStat.put(aChar, 0);
         }
 
-        fillStatChars(stringsCrypto, mapCrypto);                      // Заполняем
+        fillStatChars(stringsCrypto, mapCrypto);           // Заполняем мапы нашей статистикой из 2 двух источников
         fillStatChars(stringsStat, mapStat);
 
-        listOfCharsCrypto = new ArrayList<>(sortedMapOfChars(mapCrypto).keySet());      // Сортируем
+        listOfCharsCrypto = new ArrayList<>(sortedMapOfChars(mapCrypto).keySet());      // Сортируем мап
         listOfCharsStat = new ArrayList<>(sortedMapOfChars(mapStat).keySet());
 
 
@@ -78,7 +78,7 @@ public class CryptaAnalysis {
     private static Map sortedMapOfChars(HashMap<Character, Integer> map) {
         Map<Character, Integer> sortedMap = map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue((a, b) -> b - a))
-                .collect(LinkedHashMap::new,                                  // Метод Сортирвки HashMap
+                .collect(LinkedHashMap::new,                                  // Метод сортировки HashMap
                         (m, c) -> m.put(c.getKey(), c.getValue()),
                         LinkedHashMap::putAll);
         return sortedMap;
