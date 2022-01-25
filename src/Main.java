@@ -92,12 +92,13 @@ public class Main {
                 write(src, new CryptaAnalysis().cryptoAnalysis(new File(source), new File(sourceStat)));
             } catch (IOException e) {
                 e.printStackTrace();
-            }System.out.println("Как смог, так и расшифровал...");
+            }
+            System.out.println("Как смог, так и расшифровал...");
 
 
         } else if (choice.equals("exit")) {
             System.out.println("\nПрограмма закрывается... \n");
-        }
+        } else System.out.println("Сделайте правильный выбор...");
 
     }
 

@@ -13,8 +13,9 @@ public class BruteForce {
             int countValidity = 0;
             sb = new StringBuilder(cezar.deCrypt(file, i));
             char[] chars = sb.toString().toCharArray();                        // Перебираем варианты
-            for (int k = 0; k < chars.length; k++) {
-                if (Character.isWhitespace(chars[k]))
+            for (int k = 0; k < chars.length-1; k++) {
+                if (Character.isWhitespace(chars[k]) ||
+                        String.valueOf(chars[k]).equals(".") && String.valueOf(chars[k+1]).equals(" "))
                     countValidity++;
                 keyDecryptIs = i;
             }
@@ -24,7 +25,8 @@ public class BruteForce {
                 sb.append(result);
                 System.out.printf("Вам повезло, шифр взломан c %d попытки и успешно сохранен.\n\n", keyDecryptIs);
                 break;
-            }else System.out.println("Попытка № "+ keyDecryptIs+", "+"ломаем дальше");
+            } else
+                System.out.println("Попытка № " + keyDecryptIs + ", " + "ломаем дальше");
         }
         return sb.toString();
 
