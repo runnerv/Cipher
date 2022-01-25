@@ -13,7 +13,7 @@ public class CryptaAnalysis {
     private List<String> stringsStat;
 
     private String alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя" +
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,”:-—!?0123456789 ";
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,”:-—–!?0123456789 ";
 
 
     public String cryptoAnalysis(File cryptoSource, File statFile) throws IOException {
