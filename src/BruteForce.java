@@ -28,7 +28,7 @@ public class BruteForce {
             Scanner scanner = new Scanner(System.in);
             if (countValidity > sb.toString().length() / 10) {
                 System.out.println(System.lineSeparator());
-                System.out.println(sb.toString().substring(0, 10));
+                System.out.println(sb.substring(0, 10));
                 System.out.println(System.lineSeparator());
                 System.out.println("Текст читабелен?"+System.lineSeparator());
                 System.out.println("1. Если - ДА    или   2. Если - НЕТ");
