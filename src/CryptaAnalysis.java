@@ -49,10 +49,16 @@ public class CryptaAnalysis {
 
 
         for (String s : stringsCrypto) {
+            if (s.length() == 0) {                 // Проверяем не пустая ли строка в оригинале
+                result.append("\r\n");                      // ... и делаем как было
+            }
             for (int i = 0; i < s.length(); i++) {
                 for (int k = 0; k < listOfCharsCrypto.size(); k++) {      // Меняем символы из одной на символы другой
                     if (s.charAt(i) == listOfCharsCrypto.get(k)) {
                         result.append(listOfCharsStat.get(k));
+                        if (i == s.length() - 1) {                    // Если строка закончилась, переходим на новую
+                            result.append("\n");
+                        }
                     }
                 }
             }
