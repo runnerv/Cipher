@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class Cezar {
 
-    private String alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя" +
+    public static String alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя" +
             "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,”:-—–!?0123456789 ";
 
     public String enCrypt(File file, int key) throws IOException {
@@ -21,7 +21,7 @@ public class Cezar {
 
         for (String string : strings) {
             if (string.length() == 0) {                 // Проверяем не пустая ли строка в оригинале
-                sb.append("\r\n");                      // ... и делаем как было
+                sb.append(System.lineSeparator());                      // ... и делаем как было
             }
             for (int i = 0; i < string.length(); i++) {                                    // Шифруем
 
@@ -30,7 +30,7 @@ public class Cezar {
                 int newCharIndex = (charIndex + key) % alphabet.length(); //  Меняем в зависимости от ключа символ
                 sb.append(alphabet.charAt(newCharIndex));
                 if (i == string.length() - 1) {                    // Если строка закончилась, переходим на новую
-                    sb.append("\n");
+                    sb.append(System.lineSeparator());
                 }
             }
         }

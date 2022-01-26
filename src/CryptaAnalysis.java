@@ -12,9 +12,6 @@ public class CryptaAnalysis {
     private List<String> stringsCrypto;
     private List<String> stringsStat;
 
-    private String alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя" +
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,”:-—–!?0123456789 ";
-
 
     public String cryptoAnalysis(File cryptoSource, File statFile) throws IOException {
 
@@ -33,7 +30,7 @@ public class CryptaAnalysis {
         HashMap<Character, Integer> mapCrypto = new HashMap();
         HashMap<Character, Integer> mapStat = new HashMap();
 
-        char[] chars = alphabet.toCharArray();
+        char[] chars = Cezar.alphabet.toCharArray();
 
         for (char aChar : chars) {                        //   Заполняем HashMap-ы нашим алфавитом
 
@@ -48,16 +45,16 @@ public class CryptaAnalysis {
         listOfCharsStat = new ArrayList<>(sortedMapOfChars(mapStat).keySet());
 
 
-        for (String s : stringsCrypto) {
-            if (s.length() == 0) {                 // Проверяем не пустая ли строка в оригинале
-                result.append("\r\n");                      // ... и делаем как было
+        for (String string : stringsCrypto) {
+            if (string.length() == 0) {                 // Проверяем не пустая ли строка в оригинале
+                result.append(System.lineSeparator());                      // ... и делаем как было
             }
-            for (int i = 0; i < s.length(); i++) {
+            for (int i = 0; i < string.length(); i++) {
                 for (int k = 0; k < listOfCharsCrypto.size(); k++) {      // Меняем символы из одной на символы другой
-                    if (s.charAt(i) == listOfCharsCrypto.get(k)) {
+                    if (string.charAt(i) == listOfCharsCrypto.get(k)) {
                         result.append(listOfCharsStat.get(k));
-                        if (i == s.length() - 1) {                    // Если строка закончилась, переходим на новую
-                            result.append("\n");
+                        if (i == string.length() - 1) {                    // Если строка закончилась, переходим на новую
+                            result.append(System.lineSeparator());
                         }
                     }
                 }
@@ -71,7 +68,7 @@ public class CryptaAnalysis {
         for (String string : strings) {
             for (int i = 0; i < string.length(); i++) {
                 for (Map.Entry<Character, Integer> entry : map.entrySet())      // Метод сбора статистики на основе
-                                                                                // нашего аллфавита
+                    // нашего аллфавита
                     if (entry.getKey() == string.charAt(i)) {
                         int countChars = entry.getValue();
                         map.put(string.charAt(i), (countChars + 1));
