@@ -6,7 +6,6 @@ public class BruteForce {
     private String result = null;
     private Cezar cezar = new Cezar();
     private StringBuilder sb = null;
-    private String tempResult;
 
     public String bruteForce(File file) throws IOException {
 
@@ -28,7 +27,7 @@ public class BruteForce {
             Scanner scanner = new Scanner(System.in);
             if (countValidity > sb.toString().length() / 10) {
                 System.out.println(System.lineSeparator());
-                System.out.println(sb.substring(0, 10));
+                System.out.println(sb.substring(0, 20));
                 System.out.println(System.lineSeparator());
                 System.out.println("Текст читабелен?"+System.lineSeparator());
                 System.out.println("1. Если - ДА    или   2. Если - НЕТ");
