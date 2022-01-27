@@ -1,2 +1,2 @@
 # Cipher
-A program for encrypting-decryption text by the Caesar method. Bruteforce and statistical analysis function.
+A program for encryption-decryption text by the Caesar method. Bruteforce and statistical analysis function.
