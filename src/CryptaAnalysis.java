@@ -67,7 +67,7 @@ public class CryptaAnalysis {
         for (String string : strings) {
             for (int i = 0; i < string.length(); i++) {
                 for (Map.Entry<Character, Integer> entry : map.entrySet())      // Метод сбора статистики на основе
-                                                                                // нашего аллфавита
+                                                                                // нашего алфавита
                     if (entry.getKey() == string.charAt(i)) {
                         int countChars = entry.getValue();
                         map.put(string.charAt(i), (countChars + 1));
