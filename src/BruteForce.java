@@ -39,7 +39,7 @@ public class BruteForce {
                     continue;
                 }
             } else
-                System.out.println("Попытка № " + keyDecryptIs + ", " + "ломаем дальше");
+                System.out.printf("Попытка № %d,ломаем дальше\n",keyDecryptIs);
         }
         return sb.toString();
     }
