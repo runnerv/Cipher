@@ -22,8 +22,8 @@ public class BruteForce {
                         String.valueOf(chars[k]).equals(".") && charsPartEqual)
                     countValidity++;                      // Копим валидность
                 keyDecryptIs = i;
-
             }
+
             if (countValidity > sb.toString().length() / 10) {
                 System.out.println(System.lineSeparator());
                 System.out.println(sb.substring(0, 100));
@@ -40,10 +40,7 @@ public class BruteForce {
                 }
             } else
                 System.out.println("Попытка № " + keyDecryptIs + ", " + "ломаем дальше");
-
         }
         return sb.toString();
-
     }
-
 }

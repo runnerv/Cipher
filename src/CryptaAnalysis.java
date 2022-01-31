@@ -60,7 +60,6 @@ public class CryptaAnalysis {
                 }
             }
         }
-
         return result.toString();
     }
 
@@ -86,5 +85,4 @@ public class CryptaAnalysis {
                         LinkedHashMap::putAll);
         return sortedMap;
     }
-
 }
