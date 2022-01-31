@@ -105,7 +105,7 @@ public class Main {
 
     public static void write(String fileName, String text) {
 
-        File file = new File(fileName);                                                                //Определяем файл
+        File file = new File(fileName);                         //Определяем файл
 
         try {                                                    //проверяем, что если файл не существует то создаем его
             if (!file.exists()) {
@@ -113,9 +113,9 @@ public class Main {
             }
             PrintWriter out = new PrintWriter(file.getAbsoluteFile()); //PrintWriter обеспечит возможности записи в файл
             try {
-                out.print(text);                                                               //Записываем текст в файл
+                out.print(text);                                     //Записываем текст в файл
             } finally {
-                out.close();                                                         //После чего мы должны закрыть файл
+                out.close();                                        //После чего мы должны закрыть файл
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
