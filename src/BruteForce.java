@@ -19,7 +19,7 @@ public class BruteForce {
                 boolean charsPartEqual = String.valueOf(chars[k + 1]).equals(" ");
                 if (Character.isWhitespace(chars[k]) ||
                         String.valueOf(chars[k]).equals(".") && charsPartEqual ||
-                        String.valueOf(chars[k]).equals(".") && charsPartEqual)
+                        String.valueOf(chars[k]).equals(",") && charsPartEqual)
                     countValidity++;                      // Копим валидность
                 keyDecryptIs = i;
             }
