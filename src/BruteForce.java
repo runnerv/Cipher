@@ -8,9 +8,8 @@ public class BruteForce {
     private StringBuilder sb = null;
 
     public String bruteForce(File file) throws IOException {
-
+        Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < Cezar.alphabet.length(); i++) {
-
 
             int keyDecryptIs = 0;
             int countValidity = 0;
@@ -23,36 +22,25 @@ public class BruteForce {
                         String.valueOf(chars[k]).equals(".") && charsPartEqual)
                     countValidity++;                      // Копим валидность
                 keyDecryptIs = i;
+
             }
-            Scanner scanner = new Scanner(System.in);
             if (countValidity > sb.toString().length() / 10) {
                 System.out.println(System.lineSeparator());
-                System.out.println(sb.substring(0, 20));
+                System.out.println(sb.substring(0, 100));
                 System.out.println(System.lineSeparator());
-                System.out.println("Текст читабелен?"+System.lineSeparator());
-                System.out.println("1. Если - ДА    или   2. Если - НЕТ");
+                System.out.println("Текст читабелен?" + System.lineSeparator());
+                System.out.println("1. ДА (Сохраняем)    или    2. НЕТ (Подбираем дальше)");
                 String status = scanner.nextLine();
                 if (status.equals("1")) {
                     sb.append(result);
                     System.out.printf("Вам повезло, шифр взломан c %d попытки и успешно сохранен.\n\n", keyDecryptIs);
                     break;
                 } else if (status.equals("2")) {
-
-                    sb = new StringBuilder(cezar.deCrypt(file, i));
-                    for (int k = keyDecryptIs; k < chars.length - 1; k++) {             // Перебираем варианты
-                        boolean charsPartEqual = String.valueOf(chars[k + 1]).equals(" ");
-                        if (Character.isWhitespace(chars[k]) ||
-                                String.valueOf(chars[k]).equals(".") && charsPartEqual ||
-                                String.valueOf(chars[k]).equals(".") && charsPartEqual)
-                            countValidity++;                      // Копим валидность
-                        keyDecryptIs = i;
-                        sb.append(result);
-                    }
-
+                    continue;
                 }
-
             } else
                 System.out.println("Попытка № " + keyDecryptIs + ", " + "ломаем дальше");
+
         }
         return sb.toString();
 
