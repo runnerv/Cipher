@@ -9,13 +9,13 @@ public class BruteForce {
 
     public String bruteForce(File file) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < Cezar.alphabet.length(); i++) {
+        for (int i = 0; i < Cezar.alphabet.length(); i++) {// Перебираем варианты
 
             int keyDecryptIs = 0;
             int countValidity = 0;
             sb = new StringBuilder(cezar.deCrypt(file, i));
             char[] chars = sb.toString().toCharArray();
-            for (int k = 0; k < chars.length - 1; k++) {             // Перебираем варианты
+            for (int k = 0; k < chars.length - 1; k++) {
 
                 if (Character.isWhitespace(chars[k]) ||
                         chars[k]=='.' && chars[k + 1]==' ' ||
